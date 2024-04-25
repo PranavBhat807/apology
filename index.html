@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 200vh;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .container h1 {
+            font-size: 10vw;
+            transition: text-shadow 0.8s ease-in;
+        }
+
+        .container h1:hover {
+            text-shadow: gold 2px 12px 8px;
+        }
+
+        .container .matter {
+            width: 85%;
+        }
+
+        .containerofsalutation {
+            height: 100%;
+        }
+
+        .subjectmatter {
+            position: absolute;
+            top: 100vh;
+            height: 100%;
+            width: 100vw;
+        }
+
+        .matter {
+            height: 100vh;
+            width: 95%;
+            padding: 30px 25px;
+            line-height: 6vh;
+            opacity: 0;
+            font-size: 1.3vw;
+        }
+
+        .phone img {
+            cursor: pointer;
+        }
+
+        .faithfully {
+            position: fixed;
+            bottom: 0;
+            opacity: 0;
+            padding: 22px 22px;
+            font-weight: 600;
+        }
+
+        .circle {
+            position: absolute;
+            height: 5em;
+            width: 5em;
+            border-radius: 100%;
+            background-color: red;
+            opacity: 0.6;
+            bottom: 35%;
+            left: 49%;
+        }
+
+        .circle1 {
+            position: absolute;
+            height: 5em;
+            width: 5em;
+            border-radius: 100%;
+            background-color: saddlebrown;
+            bottom: 90%;
+            left: 2%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+
+        <div class="containerofsalutation">
+            <div class="From"></div>
+            <h1>From,</h1>
+            <h2 class="Name">Bhat Pranav</h2>
+            <h3 class="sem">BCA VI SEM</h3>
+
+        </div>
+
+
+
+    </div>
+
+    <div class="subjectmatter">
+
+
+        <p class="matter">I am writing to offer my sincere apologies for bringing my mobile phone into the classroom
+            premises. I understand that it was against the rules and disrupted the learning environment for both
+            myself and my fellow classmates. I take full responsibility for my actions and recognize the impact they
+            had on the lesson and the overall atmosphere of the classroom.
+
+            I realize now that having my <span class="phone">phone
+                <img src="smart-phone-01-stroke-rounded.svg" alt="" srcset="" id="smartphone">
+
+            </span>with me was not only disrespectful to the teacher but also
+            showed a
+            lack of consideration for my peers who were trying to focus and learn. I understand the importance of
+            maintaining a distraction-free environment in order to maximize learning opportunities for everyone.
+
+            I want to assure you that this was an isolated incident and I am committed to ensuring that it does not
+            happen again in the future. I have taken steps to ensure that I leave my phone outside the classroom or
+            keep it switched off during class time to avoid any further disruptions.
+
+            Once again, I apologize for any inconvenience or disruption my actions may have caused. I deeply regret
+            my mistake and assure you that I am fully committed to upholding the rules and standards of behavior in
+            the classroom.
+
+
+        <div class="circle"></div>
+        <div class="circle1"></div>
+
+
+        </p>
+
+
+    </div>
+
+    <div class="faithfully">
+        <p class="signature">Your's Faithfully</p>
+        <a href="https://www.linkedin.com/in/pranav-bhat-8772a0202" class="meranaam"
+            style="text-decoration: none; padding-left: 6px;">
+            <span>Pranav</span>
+
+        </a>
+    </div>
+
+
+
+
+    <script>
+
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.Name', {
+            duration: 2,
+            x: -1000,
+            ease: "power4.out",
+            delay: 1.2
+        })
+
+        gsap.from('.sem', {
+            duration: 2,
+            x: 1000,
+            ease: "power4.out",
+            delay: 2.2
+        })
+
+        gsap.to('.matter', {
+            opacity: 1,
+            duration: 3.2,
+            scrollTrigger: {
+                trigger: '.matter', // Selector for the element that triggers the animation
+                start: 'top 30%', // Start the animation when the top of the trigger element reaches 30% of the viewport
+                end: 'bottom 100%', // End the animation when the bottom of the trigger element reaches 50% of the viewport
+                scrub: true // Smoothly transitions the animation as the user scrolls
+            }
+        });
+
+        gsap.to('.faithfully', {
+            opacity: 1,
+            duration: 3.2,
+            delay: 2,
+            scrollTrigger: {
+                trigger: '.faithfully', // Selector for the element that triggers the animation
+                start: 'top 20%', // Start the animation when the top of the trigger element reaches 30% of the viewport
+                end: 'bottom 100%', // End the animation when the bottom of the trigger element reaches 50% of the viewport
+                scrub: true // Smoothly transitions the animation as the user scrolls
+            }
+        });
+
+        let redirectTo = "https://www.amazon.com/s?k=mobile+phones&ref=nb_sb_noss_2";
+
+        var smart_phone = document.getElementById('smartphone')
+        smart_phone.addEventListener('click', () => {
+            window.location.href = redirectTo;
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
